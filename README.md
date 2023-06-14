@@ -9,7 +9,7 @@
    configuration: --enable-shared --disable-static
 
 ```
-
+需要安装imutils和cv2库
 ## 1. Install Instructions
 
 运行代码前，请确保安装了```ffmpeg-4.4.1```，若没有，请执行：
