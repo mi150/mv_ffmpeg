@@ -1918,11 +1918,11 @@ int ff_h264_decode_mb_cabac(const H264Context *h, H264SliceContext *sl)
     const int decode_chroma = sps->chroma_format_idc == 1 || sps->chroma_format_idc == 2;
     const int pixel_shift = h->pixel_shift;
     H264Ref ref_l;
-    char filename[20]; // 用于存储最终的文件名
+    //char filename[20]; // 用于存储最终的文件名
 
     // 使用 sprintf() 将整数 i 与字符串 "mb_" 组合在一起
-    sprintf(filename, "mb_%d.txt", (int)(h->cur_pic_ptr->f->pts / h->cur_pic_ptr->f->pkt_duration));
-    FILE* fp = fopen(filename, "a+");
+    //sprintf(filename, "mb_%d.txt", (int)(h->cur_pic_ptr->f->pts / h->cur_pic_ptr->f->pkt_duration));
+    FILE* fp = fopen("mv.txt", "a+");
     //FILE* fp_yuv = fopen("/home/ubuntu/VideoAnalytics/COVA/residual.txt", "a+");
     mb_xy = sl->mb_xy = sl->mb_x + sl->mb_y*h->mb_stride;
     
