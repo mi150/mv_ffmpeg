@@ -19,6 +19,7 @@
 2.依次执行以安装ffmpeg
 
    ```
+   cd ffmpeg-4.4.1
    ./configure --enable-shared --disable-static
    make -j8
    make install
@@ -29,18 +30,22 @@
 
 现在，用次repo中的```h264_cabac.c```将```libavcodec```文件夹下的```h264_cabac.c```:
 
-```cd/......```
+```cd ffmpeg-4.4.1```
 
 编译：
 
-```build```
+```
+make
+make install
+```
 
 执行：
 
 ```
-    cd...
-    ffmpeg.....
+    ffmpeg -c:v h264 -i input.mp4 -f null - 
 ```
+后会获得mv_i.txt保存了第i帧的运动向量信息；
+
 ## 3. 
 主要是对ffmpeg的h264_cabac.c文件进行修改；
 
