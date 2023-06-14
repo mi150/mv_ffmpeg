@@ -16,12 +16,12 @@
 1.通过https://git.ffmpeg.org/ffmpeg.git获取ffmpeg-4.4.1版本
 2.依次执行以安装ffmpeg
 
-   ./configure --enable-shared --disable-static
+   ```./configure --enable-shared --disable-static
    
    make -j8
    
    make install
-      
+   ```   
 
 ``` pip.....```
 
