@@ -1,3 +1,4 @@
+import math
 from dds_utils import Region,Results
 import numpy as np
 
@@ -15,12 +16,15 @@ def resize(r):
     return r
 
 
-def process_mv(filename):
+def process_mv(filename,):
     def process_play_order(line,time_base):
         line=line.split(':')[-1]
         return int(int(line)/(time_base))
     #依赖关系
     #总帧数
+    global width,height
+    block_x_len=int(math.ceil(width/16))
+    block_y_len=int(math.ceil(height/16))
     num_size=3000
     #文件位置
     f=open(filename)
@@ -31,8 +35,7 @@ def process_mv(filename):
     #解码顺序每帧的帧类型
     f_type_list=['' for _ in range(num_size)]
 
-    block_x_len=0
-    block_y_len=0
+
     ###初始化
     f_mv_list = [[[[ [],[] ] for _ in range(block_y_len)] for _ in range(block_x_len)] for _ in range(num_size)]
 
@@ -84,7 +87,10 @@ def getmblist(x,y,w,h):
     y0 = int(y * height)
     x1 = int(w * width+x0)
     y1 = int((h * height) + y0)
-    return min(79,int(x0/16)),min(44,int(y0/16)),min(79,int(x1/16)+1),min(44,int(y1/16)+1)
+    global width,height
+    block_x_len=int(math.ceil(width/16))
+    block_y_len=int(math.ceil(height/16))
+    return min(block_x_len,int(x0/16)),min(block_y_len,int(y0/16)),min(block_x_len,int(x1/16)+1),min(block_y_len,int(y1/16)+1)
 
 
 def clean(data_list):
@@ -186,8 +192,11 @@ if __name__=="__main__":
     frame_length = 3000
     width = 1280
     height = 720
+    #s_frames是做检测的帧号
     s_frames = []
+    #result是Results结构的未复用检测结果
     result = []
+    #final_results是最终结果
     final_results = Results()
     for frame_idx in range(frame_length):
         # 检测过的帧
