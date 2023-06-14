@@ -14,7 +14,7 @@
 
 运行代码前，请确保安装了```ffmpeg-4.4.1```，若没有，请执行：
 
-1.通过https://git.ffmpeg.org/ffmpeg.git  获取ffmpeg-4.4.1版本
+1.通过https://git.ffmpeg.org/ffmpeg.git  获取ffmpeg-4.4.1版本(或其他4.4版本)
 
 2.依次执行以安装ffmpeg
 
