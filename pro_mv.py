@@ -37,7 +37,7 @@ def move_bbox(frame_id,x,y,w,h,refer):
         return 0,0
     return sum(x)/len(x),sum(y)/len(y)
 
-def move_re_bbox(frame_id,x,y,w,h,refer):
+def move_re_bbox(frame_id,x,y,w,h):
     MV = all_mv[frame_id - 1]
     x0, y0, x1, y1 = getmblist(x, y, w, h)
     x=[]
