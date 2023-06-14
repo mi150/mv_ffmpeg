@@ -2,15 +2,23 @@
 
 ## 0. Environment
 
-```OS
-   python
-   gcc
-   ffmpeg
+```OS ubuntu~18.04
+   python 3.7
+   ffmpeg version 4.4.1 Copyright (c) 2000-2021 the FFmpeg developers
+   built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+   configuration: --enable-shared --disable-static
+
 ```
 
 ## 1. Install Instructions
 
 运行代码前，请确保安装了```ffmpeg-4.4.1```，若没有，请执行：
+1.通过https://git.ffmpeg.org/ffmpeg.git获取ffmpeg-4.4.1版本
+2.依次执行以安装ffmpeg
+   ./configure --enable-shared --disable-static
+   make -j8
+   make install
+      
 
 ``` pip.....```
 
