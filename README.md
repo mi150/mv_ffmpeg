@@ -13,13 +13,14 @@
 ## 1. Install Instructions
 
 运行代码前，请确保安装了```ffmpeg-4.4.1```，若没有，请执行：
-1.通过https://git.ffmpeg.org/ffmpeg.git获取ffmpeg-4.4.1版本
+
+1.通过https://git.ffmpeg.org/ffmpeg.git  获取ffmpeg-4.4.1版本
+
 2.依次执行以安装ffmpeg
 
-   ```./configure --enable-shared --disable-static
-   
+   ```
+   ./configure --enable-shared --disable-static
    make -j8
-   
    make install
    ```   
 
