@@ -25,7 +25,6 @@ mv的去噪：
 
 def clean(data_list):
     data_array = np.asarray(data_list)
-
     if len(data_list)>5:
         data_array=data_array[data_array != 0]
         if data_array.shape[0]==0:
