@@ -31,7 +31,6 @@ def clean(data_list):
             return data_array
         mean = np.mean(data_array, axis=0)
         std = np.std(data_array, axis=0)
-
         preprocessed_data_array = [x for x in data_array if (x > mean - 0.8 * std)]
         preprocessed_data_array = [x for x in preprocessed_data_array if (x < mean + 0.8 * std)]
         return preprocessed_data_array
