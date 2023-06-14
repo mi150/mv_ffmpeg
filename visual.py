@@ -1,8 +1,6 @@
 import sys
-
 import logging
 import cv2 as cv
-
 sys.path.append('../')
 from dds_utils import read_results_dict
 
@@ -12,7 +10,7 @@ max_area_threshold = 0.6
 
 vid_name="D:\\VASRL\\server\\server\\my_dds_sr_619\\dataset\\video_test\\src\\video_test.mp4"
 file_name="mv_results"
-
+nomv_file_name="mv_results"
 save_name=f"tra.mp4"
 
 def iou(b1, b2):
@@ -39,7 +37,7 @@ def main():
     logger.addHandler(logging.NullHandler())
 
     results = read_results_dict(file_name)
-
+    nomove_results=read_results_dict(nomv_file_name)
     cap = cv.VideoCapture(vid_name)
     width = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
@@ -63,8 +61,7 @@ def main():
         if fid in results.keys():
             cnt=0
             bbox=results[fid]
-            if fid%30==3:
-                bbox_yx=results[fid]
+            bbox_old=nomove_results[fid]
 
             for b in bbox_yx:
                 cnt+=1
@@ -89,7 +86,7 @@ def main():
                     continue
 
                 cv.rectangle(frame, (x0, y0), (x1, y1), (0, 255, 0), 2)
-            for b in bbox:
+            for b in bbox_old:
                 cnt+=1
                 #需要注释
                 b = b.x, b.y, b.w, b.h, b.label, b.conf
