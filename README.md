@@ -24,7 +24,6 @@
    make install
    ```   
 
-``` pip.....```
 
 ## 2. Run our code
 
