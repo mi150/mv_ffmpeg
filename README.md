@@ -1,4 +1,7 @@
 # mv_ffmpeg
+
+ffmpeg版本为4.4.1；将libavcodec文件夹下的h264_cabac.c文件替换即可；
+
 主要是对ffmpeg的h264_cabac.c文件进行修改；
 
 在h264_cabac.c中ff_h264_decode_mb_cabac函数实现了对每个宏块的运动向量的解码；
