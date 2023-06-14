@@ -24,6 +24,8 @@ fprintf(fp, "list:%d mv:%d/%d ref:%d \n", list, mx, my, ref_l.poc - 65536);
 
 输出了当前运动向量的参考方向：list：0/1；运动向量x，y方向的数值(mx,my)，为四分之一精度使用时要/4；以及该mv的POC：ref_l.poc - 65536，具体参考帧为 当前GOP I帧号+POC/2；
 
+mv复用的流程为获取目标检测的bbox后，根据bbox位置获取检测帧的宏块，然后通过帧间参考关系利用运动向量将bbox移动到需要复用的帧上；
+
 mv的去噪(python)：
 
     def clean(data_list):
