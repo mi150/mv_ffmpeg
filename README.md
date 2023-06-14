@@ -24,14 +24,25 @@ fprintf(fp, "list:%d mv:%d/%d ref:%d \n", list, mx, my, ref_l.poc - 65536);
 mv的去噪：
 
 def clean(data_list):
+
     data_array = np.asarray(data_list)
+    
     if len(data_list)>5:
+    
         data_array=data_array[data_array != 0]
+        
         if data_array.shape[0]==0:
+        
             return data_array
+            
         mean = np.mean(data_array, axis=0)
+        
         std = np.std(data_array, axis=0)
+        
         preprocessed_data_array = [x for x in data_array if (x > mean - 0.8 * std)]
+        
         preprocessed_data_array = [x for x in preprocessed_data_array if (x < mean + 0.8 * std)]
+        
         return preprocessed_data_array
+        
     return data_array
