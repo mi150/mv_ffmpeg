@@ -44,7 +44,7 @@ make install
 ```
     ffmpeg -c:v h264 -i input.mp4 -f null - 
 ```
-后会获得mv_i.txt保存了第i帧的运动向量信息；
+后会获得mv.txt保存了所有帧的运动向量信息；
 
 ## 3. 
 
