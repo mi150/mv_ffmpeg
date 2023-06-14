@@ -1,12 +1,41 @@
 # mv_ffmpeg
 
-ffmpeg版本为4.4.1；将libavcodec文件夹下的h264_cabac.c文件替换即可；
+## 0. Environment
 
+```OS
+   python
+   gcc
+   ffmpeg
+```
+
+## 1. Install Instructions
+
+运行代码前，请确保安装了```ffmpeg-4.4.1```，若没有，请执行：
+
+``` pip.....```
+
+## 2. Run our code
+
+现在，用次repo中的```h264_cabac.c```将```libavcodec```文件夹下的```h264_cabac.c```:
+
+```cd/......```
+
+编译：
+
+```build```
+
+执行：
+
+```
+    cd...
+    ffmpeg.....
+```
+## 3. 
 主要是对ffmpeg的h264_cabac.c文件进行修改；
 
-在h264_cabac.c中ff_h264_decode_mb_cabac函数实现了对每个宏块的运动向量的解码；
+在```h264_cabac.c```中```ff_h264_decode_mb_cabac```函数实现了对每个宏块的运动向量的解码；
 
-主要在const H264Context *h和H264SliceContext *sl结构体中保存了需要用到的信息：
+主要在```const H264Context```和```H264SliceContext```结构体中保存了需要用到的信息：
 
     h->cur_pic_ptr->f->pkt_duration：时间基
     
