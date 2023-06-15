@@ -73,5 +73,5 @@ class Region:
 
 将原结果```results```和复用后的```final_results```作为```visual.py```文件的```nomv_filename```和```filename```变量，执行后可以得到可视化视频文件，如该repo中的```demo.mp4```。
 
-![an image is a 3d matrix RGB](/i/image_3d_matrix_rgb.png "An image is a 3D matrix")
+![an image is a 3d matrix RGB](/0000000125.png "An image is a 3D matrix")
 
