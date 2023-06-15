@@ -54,6 +54,20 @@ make install
 ## 4. MV-based shift
 
 获取```mv.txt```文件后，并获取到检测结果```results```文件，将检测结果重定义为```dds_utils.py```中```Region```结构，运行```process_results.py```文件对结果进行复用并将最终结果保存为```final_results```。
+```
+class Region:
+    def __init__(self, fid, x, y, w, h, conf, label, resolution,
+                 origin="generic"):
+        self.fid = int(fid)
+        self.x = float(x)
+        self.y = float(y)
+        self.w = float(w)
+        self.h = float(h)
+        self.conf = float(conf)
+        self.label = label
+        self.resolution = float(resolution)
+        self.origin = origin
+```
 
 ## 5. Visualization
 
