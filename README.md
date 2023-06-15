@@ -44,12 +44,20 @@ make install
 ```
     ffmpeg -c:v h264 -i input.mp4 -f null - 
 ```
-后会获得mv.txt保存了所有帧的运动向量信息；
 
-## 3. 
+随后，在...文件夹中获得```mv.txt```文件保存了所有帧的运动向量信息；
 
+## 3. Detection
 
-获取mv.txt文件后，并获取到检测结果results文件，将检测结果重定义为dds_utils.py中Region结构，运行process_results.py文件对结果进行复用并将最终结果保存为final_results。
+使用任意目标检测模型对```input.mp4```进行检测，检测结果保存在```results```文件中。
 
-将原结果results和复用后的final_results作为visual.py文件的nomv_filename和filename变量，执行后可以得到演示视频mp4文件。
+## 4. MV-based shift
+
+获取```mv.txt```文件后，并获取到检测结果```results```文件，将检测结果重定义为```dds_utils.py```中```Region```结构，运行```process_results.py```文件对结果进行复用并将最终结果保存为```final_results```。
+
+## 5. Visualization
+
+将原结果```results```和复用后的```final_results```作为```visual.py```文件的```nomv_filename```和```filename```变量，执行后可以得到可视化视频文件，如该repo中的```demo.mp4```。
+
+![an image is a 3d matrix RGB](/i/image_3d_matrix_rgb.png "An image is a 3D matrix")
 
