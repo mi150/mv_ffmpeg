@@ -49,11 +49,11 @@ make install
 
 ## 3. Detection
 
-使用任意目标检测模型对```input.mp4```进行检测，检测结果保存在```results```文件中。
+使用任意目标检测模型对```input.mp4```进行检测，检测结果保存在```results```csv文件中。
 
 ## 4. MV-based shift
 
-获取```mv.txt```文件后，并获取到检测结果```results```文件，将检测结果重定义为```dds_utils.py```中```Region```结构，运行```process_results.py```文件对结果进行复用并将最终结果保存为```final_results```。
+获取```mv.txt```文件后，并获取到检测结果```results```csv文件，将检测结果重定义为```dds_utils.py```中```Region```结构，运行```process_results.py```文件对结果进行复用并将最终结果保存为```final_results```csv文件。
 ```
 class Region:
     def __init__(self, fid, x, y, w, h, conf, label, resolution,
