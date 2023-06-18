@@ -72,7 +72,7 @@ class Region:
 ## 5. Visualization
 
 将原结果```results```和复用后的```final_results```作为```visual.py```文件的```nomv_filename```和```filename```变量，执行后可以得到可视化视频文件，如该repo中的```demo.mp4```。
-下列图片中，蓝色框是复用结果，绿色框是检测结果：
+下列图片中，绿色框是按业务流程每秒一帧的检测结果，蓝色框是MV-based的追踪结果：
 ![an image is a 3d matrix RGB](/0000000125.png "An image is a 3D matrix")
 ![an image is a 3d matrix RGB](/0000000151.png "An image is a 3D matrix")
 ![an image is a 3d matrix RGB](/0000000155.png "An image is a 3D matrix")
