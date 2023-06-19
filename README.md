@@ -45,7 +45,7 @@ make install
     ffmpeg -c:v h264 -i input.mp4 -f null - 
 ```
 
-随后，在...文件夹中获得```mv.txt```文件保存了所有帧的运动向量信息；
+随后，在执行指令的文件夹中获得```mv.txt```文件保存了所有帧的运动向量信息；
 
 ## 3. Detection
 
